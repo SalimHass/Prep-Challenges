@@ -17,7 +17,7 @@
 
 function square(arr) {
     // write your code here
-    const arr1= arr.map(x => x*x)
+    const arr1 = arr.map(x => x * x)
     return arr1
 }
 
@@ -58,8 +58,8 @@ function square(arr) {
 
 function fullName(arr) {
     // write your code here
-const name = arr.map(x=> x.firstName +" " + x.lastName);
-return name;
+    const name = arr.map(x => x.firstName + " " + x.lastName);
+    return name;
 
 
 
@@ -125,10 +125,16 @@ return name;
 
 function gradesAvg(arr) {
     // write your code here
-  
-    let avg = arr.map(x => x.gradslist);
 
-    arr.push(avg);
+    let avgArr = arr.map(x => {
+        let sum = 0;
+        x.gradsList.forEach(element => {
+            sum += element;
+        });
+        x.avg = sum / x.gradsList.length;
+        return x;
+    });
+    return avgArr;
 }
 
 
@@ -193,13 +199,24 @@ function gradesAvg(arr) {
 //      lastNAme: 'Sagar',
 // 			gradsList: [20,10,18,11,2,20,3,10],
 //      avg: 11.75,
-//      result: 'Failed'
+//      : 'Failed'
 // 	}
 //]
 // -------------
 
 function studentsResult(arr) {
     // write your code here
+    let result = gradesAvg(arr);
+    let finalResult = result.map(x => {
+        if (x.avg >= 50) {
+            x.result = "Passed"
+        } else {
+            x.result = "Failed"
+        }
+        return x
+    });
+    return finalResult;
 }
+
 
 module.exports = { square, fullName, gradesAvg, studentsResult };
