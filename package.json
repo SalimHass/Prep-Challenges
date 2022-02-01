@@ -8,7 +8,9 @@
   },
   "scripts": {
     "pull-challenge": "`which bash` ./bin/pull-challenge.sh",
-    "test": "jest"
+    "test": "jest",
+    "start": "node ./bin/www",
+    "watch": "nodemon"
   },
   "repository": {
     "type": "git",
