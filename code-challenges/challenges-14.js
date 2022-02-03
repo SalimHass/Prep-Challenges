@@ -52,6 +52,21 @@ const LastWord_2 = (str) => {
 
 const replaceWords = (str) => {
     // write your code here
+    let newStr = str.split(' ');
+    let indexI = newStr.indexOf('I')
+    let indexAm = newStr.indexOf('am')
+    let indexWas = newStr.indexOf('was')
+    if (indexI >= 0) {
+        newStr.splice(indexI, 1, 'We')
+    }
+    if (indexAm >= 0) {
+        newStr.splice(indexAm, 1, 'are')
+    }
+    if (indexWas >= 0) {
+        newStr.splice(indexWas, 1, 'were')
+    }
+    return newStr.join(' ');
+
 }
 
 // 4) ---------------------
@@ -63,7 +78,12 @@ const replaceWords = (str) => {
 
 const arrToStr = (arr) => {
     // write your code here
+    for (let index = 4; index < arr.length; index += 5) {
+        arr[index] = arr[index] + ",";
+    }
+    return arr.join(' ');
 }
+
 
 // 5) ---------------------
 // 
@@ -79,6 +99,7 @@ const arrToStr = (arr) => {
 
 const letterCounter = (str) => {
     // write your code here
+   
 }
 
 
