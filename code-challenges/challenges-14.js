@@ -118,6 +118,7 @@ const letterCounter = (str) => {
         
     });
 
+    
     return newArr.join(' ');
 
 }
