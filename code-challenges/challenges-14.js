@@ -99,7 +99,27 @@ const arrToStr = (arr) => {
 
 const letterCounter = (str) => {
     // write your code here
-   
+    let wordsArr = str.split(' ');
+    let newArr = [];    
+    let letterCount = 1;
+    wordsArr.forEach(element => {
+        let word = ''
+        for (let i = 0 ; i < element.length-1; i++){
+            if(element[i]==element[i+1]){
+                letterCount++; 
+            }else {
+                word += `${element[i]}${letterCount}`
+                letterCount = 1;
+            }
+        }
+        word += `${element[element.length-1]}${letterCount}`
+        newArr.push(word);
+        letterCount = 1;
+        
+    });
+
+    return newArr.join(' ');
+
 }
 
 
