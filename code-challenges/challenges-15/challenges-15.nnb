@@ -45,7 +45,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function howManyGames(p, d, m, s) {\n    // Return the number of games you can buy\n    let counter=0;\n    let gamePrice = p;\n    while(s>=gamePrice) {\n        s = s - gamePrice;\n        gamePrice-=d;\n        if(gamePrice<m) {\n            gamePrice = m;\n        }\n        counter++;\n    }\n\nreturn counter;\n}"
             ],
             "outputs": []
         },
@@ -59,7 +59,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function squares(a, b) {\n    // Write your code here\n    let x= Math.ceil(Math.sqrt(a));\n    let counter = 0;\n    while (x*x<= b){\n        counter++\n        x++\n    }\nreturn counter;\n}"
             ],
             "outputs": []
         }
