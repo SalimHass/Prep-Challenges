@@ -16,7 +16,20 @@
 
 const recursionPattern = (int1, int2) => {
     // write your code here
-
+    return recursionPatternRec(int1,int2,int1)
+        
+}
+function recursionPatternRec (int1, int2,orginal) {
+    // write your code here
+  let x= int1-int2;
+    if(x==orginal) {
+        return [int1,x]
+    } 
+    if(x<0) {
+        int2 *= -1
+        return [int1].concat(recursionPatternRec(x,int2,orginal))
+    } 
+    return [int1].concat(recursionPatternRec(x,int2,orginal))
         
 }
 
